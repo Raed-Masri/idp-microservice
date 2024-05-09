@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "fbcccb4d-3a55-4c72-94e4-12da074ceb1b",
+		"name": "idp-ms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29917370"
+	},
+	"item": [
+		{
+			"name": "sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"raed@gmail.com\",\r\n    \"password\":\"Raed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/sign-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Raed\",\r\n    \"lastName\": \"Masri\",\r\n    \"dob\": \"01-01-2000\",\r\n    \"email\": \"raed@gmail.com\",\r\n    \"password\": \"Raed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhZWRAZ21haWwuY29tIiwiaWF0IjoxNzE0OTA3NzA3fQ.A0n2qd31cuptoOEyCRwvbx9T2L9SauxJFmmSNaP7rFA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"raed@gmail.com\",\r\n    \"firstName\": \"Raed\",\r\n    \"lastName\": \"Masrii\",\r\n    \"dob\": \"01-01-1990\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhZWRAZ21haWwuY29tIiwiaWF0IjoxNzE1MjcyNjcyfQ.d11mEuUIvIKI0_3UbCbwL-WLjp17pCj07MZPHZ-HqPQ"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/user/:email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						":email"
+					],
+					"variable": [
+						{
+							"key": "email",
+							"value": "raed@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
